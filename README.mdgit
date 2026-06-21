@@ -1,0 +1,1 @@
+# eae_tabla_periodica initgit add README.mdgit commit -m first commitgit branch -M maingit remote add origin https://github.com/marinautriera-oss/eae_tabla_periodica.gitgit push -u origin main
