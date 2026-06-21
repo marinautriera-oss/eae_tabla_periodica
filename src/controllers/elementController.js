@@ -23,7 +23,7 @@ export const getElements = async (req, res) => {
         res.status(201).json({ message:'Elemento creado', id })
     } catch (error) {
         console.error('Error al crear elemento:', error)
-        res.status(500).json({ message: error.mesage })
+        res.status(500).json({ message: error.message })
     }
  }
  export const updateElement = async (req, res) => {

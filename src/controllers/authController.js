@@ -1,9 +1,8 @@
 import { registerUser, loginUser} from '../services/authService.js'
 
 export const register = async (req, res) => {
-    console.log('BODY RECIBIDO:', req.body)   // ← línea temporal de debug
     const { nombre, email, contraseña } = req.body
-    
+
     try{ const{nombre, email, contraseña} = req.body
     const id = await registerUser(nombre, email, contraseña)
     res.status(201).json({message:'Usuario creado',id})
