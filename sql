@@ -18,3 +18,4 @@ grupo INT NOT NULL,
 periodo INT NOT NULL,
 categoria ENUM('metal', 'no metal', 'metaloide', 'gases nobles') NOT NULL
 );
+UPDATE USERS SET VERIFICADO = 1 WHERE EMAIL = 'ma.utriera@gmail.com';

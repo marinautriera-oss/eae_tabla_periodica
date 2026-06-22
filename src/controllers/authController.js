@@ -1,7 +1,6 @@
-import { registerUser, loginUser} from '../services/authService.js'
+import { registerUser, loginUser, verifyEmail } from '../services/authService.js'
 
 export const register = async (req, res) => {
-    const { nombre, email, contraseña } = req.body
 
     try{ const{nombre, email, contraseña} = req.body
     const id = await registerUser(nombre, email, contraseña)

@@ -3,7 +3,6 @@ import jwt from 'jsonwebtoken'
 import { findByEmail, createUser, findByVerificationToken, markAsVerified } from '../repositories/userRepository.js'
 import { generateVerificationToken } from '../utils/token.js'
 import { sendVerificationEmail } from '../utils/email.js'
-import { registerUser, loginUser, verifyEmail } from '../services/authService.js'
 
 export const registerUser = async (nombre, email, contraseña) => {
     const existing = await findByEmail(email)
@@ -11,6 +10,9 @@ export const registerUser = async (nombre, email, contraseña) => {
 
     const hashed = await bcrypt.hash(contraseña, 10)
     const { token, expires } = generateVerificationToken()
+    
+    console.log('TOKEN GENERADO:', token)      // ← agregar esta línea
+    console.log('EXPIRES:', expires)
 
     const id = await createUser(nombre, email, hashed, 'ESTUDIANTE', 'ACTIVO', token, expires)
 
