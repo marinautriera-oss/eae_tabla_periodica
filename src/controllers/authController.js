@@ -19,3 +19,12 @@ export const login = async (req, res) => {
         res.status(400).json({ message: error.message })
     }
 }   
+export const verify = async (req, res) => {
+    try {
+        const { token } = req.params
+        await verifyEmail(token)
+        res.status(200).json({ message: 'Cuenta verificada. Ya podés iniciar sesión.' })
+    } catch (error) {
+        res.status(400).json({ message: error.message })
+    }
+}
