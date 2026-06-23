@@ -8,7 +8,7 @@ export const getById = async (id) => {
 };
 
 export const create = async (data) => {
-    return await createElement(data.nombre, data.simbolo, data.numero_atomico, data.masa_atomica, data.grupo, data.periodo, data.categoria);
+    return await createElement(data.NOMBRE, data.SIMBOLO, data.NUMERO_ATOMICO, data.MASA_ATOMICA, data.GRUPO, data.PERIODO, data.CATEGORIA);
 };
 
 export const update = async (id, data) => {
