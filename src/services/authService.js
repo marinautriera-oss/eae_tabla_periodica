@@ -11,7 +11,7 @@ export const registerUser = async (nombre, email, contraseña) => {
     const hashed = await bcrypt.hash(contraseña, 10)
     const { token, expires } = generateVerificationToken()
     
-    console.log('TOKEN GENERADO:', token)      // ← agregar esta línea
+    console.log('TOKEN GENERADO:', token)      
     console.log('EXPIRES:', expires)
 
     const id = await createUser(nombre, email, hashed, 'ESTUDIANTE', 'ACTIVO', token, expires)

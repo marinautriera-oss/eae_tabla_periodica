@@ -17,10 +17,12 @@ export const createUser = async (nombre, email, contraseña, rol, estado, verifi
 
 export const findByVerificationToken = async (token) => {
     const db = await getDb()
+ 
     const [rows] = await db.execute(
         'SELECT * FROM USERS WHERE VERIFICATION_TOKEN = ?',
         [token]
     )
+    
     return rows[0]
 }
 
